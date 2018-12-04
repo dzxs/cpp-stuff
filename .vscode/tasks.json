@@ -1,0 +1,28 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build client",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++11", "winsock/client.cpp", "-o", "winsock/client.exe", "-s", "-lws2_32", "-Wno-write-strings", "-fno-exceptions", "-fmerge-all-constants", "-static-libstdc++", "-static-libgcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Build server",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++11", "winsock/server.cpp", "-o", "winsock/server.exe", "-s", "-lws2_32", "-Wno-write-strings", "-fno-exceptions", "-fmerge-all-constants", "-static-libstdc++", "-static-libgcc"
+            ],
+            "group": "build"
+        }
+    ]
+}

@@ -81,7 +81,7 @@ int __cdecl main(void) {
 	ClientSocket = accept(ListenSocket, NULL, NULL);
 	if (ClientSocket == INVALID_SOCKET) {
 		printf("accept failed with error: %d\n", WSAGetLastError());
-		closesocket(ListenSocket)
+		closesocket(ListenSocket);
 		WSACleanup();
 		return 1;
 	}
